@@ -29,3 +29,15 @@ The app allows users to search for artworks, view details, and save their favori
 ```bash
 git clone https://github.com/your-username/art-gallery.git
 cd art-gallery
+```
+
+2. Install dependencies:
+3. 
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
