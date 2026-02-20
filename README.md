@@ -43,3 +43,19 @@ npm run dev
 ```
 
 4. Open your browser at http://localhost:5173 (or the URL printed in the terminal).
+
+## Usage
+
+- Use the search bar to find artworks by keyword.
+
+- Click **Recommend Art** to see random artworks.
+
+- Click **Add to Gallery** on an artwork card to save it. Saved artworks turn the button into **Remove from Gallery**.
+
+- Open artwork images in a modal by clicking the image.
+
+- Navigate pages using the **Previous** and **Next** buttons.
+
+## License
+
+This project is open source under the MIT License.
