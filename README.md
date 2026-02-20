@@ -32,7 +32,7 @@ cd art-gallery
 ```
 
 2. Install dependencies:
-3. 
+
 ```bash
 npm install
 ```
@@ -41,3 +41,5 @@ npm install
 ```bash
 npm run dev
 ```
+
+4. Open your browser at http://localhost:5173 (or the URL printed in the terminal).
