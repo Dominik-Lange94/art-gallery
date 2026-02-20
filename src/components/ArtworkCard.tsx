@@ -39,19 +39,7 @@ return (
     <h3 className="text-white font-semibold">{artwork.title}</h3>
     <p className="text-gray-300">{artwork.artist_title}</p>
 
-    {/* Add / Remove Button */}
-    <button
-        onClick={() =>
-        isInGallery ? removeFromGallery(artwork.id) : addToGallery({ ...artwork, note })
-        }
-        className={`mt-2 px-3 py-1 rounded font-semibold transition transform duration-200 ease-in-out ${
-        isInGallery
-            ? "bg-red-600 hover:bg-red-500 active:bg-red-700 text-white hover:scale-105"
-            : "bg-yellow-500 hover:bg-yellow-400 active:bg-yellow-600 text-white hover:scale-105"
-        }`}
-    >
-        {isInGallery ? "Remove from Gallery" : "Add to Gallery"}
-    </button>
+   
 
     {/* Note Input */}
     {isInGallery && (
@@ -71,6 +59,19 @@ return (
         </button>
         </div>
     )}
+     {/* Add / Remove Button */}
+    <button
+        onClick={() =>
+        isInGallery ? removeFromGallery(artwork.id) : addToGallery({ ...artwork, note })
+        }
+        className={`mt-2 px-3 py-1 rounded font-semibold transition transform duration-200 ease-in-out ${
+        isInGallery
+            ? "bg-red-600 hover:bg-red-500 active:bg-red-700 text-white hover:scale-105"
+            : "bg-yellow-500 hover:bg-yellow-400 active:bg-yellow-600 text-white hover:scale-105"
+        }`}
+    >
+        {isInGallery ? "Remove from Gallery" : "Add to Gallery"}
+    </button>
 
     {/* Modal */}
     {isModalOpen && (
