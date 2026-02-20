@@ -16,7 +16,7 @@ const currentResults = results.slice(
 )
 
 // Suche ausführen
-async function handleSearch(e: React.FormEvent) {
+async function handleSearch(e: React.SubmitEvent) {
     e.preventDefault()
     const data = await searchArtworks(query)
     setResults(data)
@@ -26,7 +26,6 @@ async function handleSearch(e: React.FormEvent) {
 // Recommend 
 async function recommendArt() {
     const data = await getRandomArtworks(9)
-
     setResults(data)
 }
 
@@ -36,34 +35,42 @@ useEffect(() => {
 }, [results])
 
 return (
+
     <div className="p-6 bg-gray-900 text-gray-100 min-h-screen">
-    <form onSubmit={handleSearch} className="flex gap-2 mb-4">
+        <div className="max-w-[1600px] mx-auto px-6">
+    <form onSubmit={handleSearch} className="flex gap-2 mb-4 ">
         <input
-        className="border border-gray-600 bg-gray-800 text-gray-100 px-3 py-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="border border-gray-600 bg-gray-800 text-gray-100 px-4 py-4 rounded w-full focus:outline-none focus:ring-2 hover:bg-gray-700 duration-200 ease-in-out focus:ring-yellow-500 focus:bg-gray-700"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search artworks..."
         />
         <button
         type="submit"
-        className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400 transition hover:scale-105 duration-200 ease-in-out"
+        className="bg-yellow-500 text-white px-6 py-4 rounded hover:bg-yellow-400 transition hover:scale-105 duration-200 ease-in-out"
         >
         Search
         </button>
         <button
         type="button"
         onClick={recommendArt}
-        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-400 transition hover:scale-105 duration-200 ease-in-out"
+        className="bg-green-500 text-white px-6 py-4 rounded hover:bg-green-400 transition hover:scale-105 duration-200 ease-in-out"
         >
-        Recommend Art
+        Get Recommendation
         </button>
     </form>
+            
+                    </div>
+ 
 
     {/* Grid */}
+    <div className="max-w-[1600px] mx-auto px-6">
     <div className="grid grid-cols-3 gap-6 mt-6">
+        
         {currentResults.map((art) => (
-        <ArtworkCard key={art.id} artwork={art} />
+            <ArtworkCard key={art.id} artwork={art} />
         ))}
+    </div>
     </div>
 
     {/* Pages */}
