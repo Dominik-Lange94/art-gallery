@@ -26,6 +26,7 @@ async function handleSearch(e: React.FormEvent) {
 // Recommend 
 async function recommendArt() {
     const data = await getRandomArtworks(9)
+
     setResults(data)
 }
 
@@ -45,14 +46,14 @@ return (
         />
         <button
         type="submit"
-        className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400 transition"
+        className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400 transition hover:scale-105 duration-200 ease-in-out"
         >
         Search
         </button>
         <button
         type="button"
         onClick={recommendArt}
-        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-400 transition"
+        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-400 transition hover:scale-105 duration-200 ease-in-out"
         >
         Recommend Art
         </button>
@@ -71,7 +72,7 @@ return (
         <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage(currentPage - 1)}
-            className="bg-gray-700 text-white px-3 py-1 rounded disabled:opacity-50"
+            className="bg-gray-700 text-white px-3 py-1 rounded disabled:opacity-50 hover:scale-105 duration-200 ease-in-out"
         >
             Previous
         </button>
@@ -81,7 +82,7 @@ return (
         <button
             disabled={currentPage * itemsPerPage >= results.length}
             onClick={() => setCurrentPage(currentPage + 1)}
-            className="bg-gray-700 text-white px-3 py-1 rounded disabled:opacity-50"
+            className="bg-gray-700 text-white px-3 py-1 rounded disabled:opacity-50 hover:scale-105 duration-200 ease-in-out"
         >
             Next
         </button>

@@ -30,12 +30,18 @@ useEffect(() => {
 }, [gallery])
 
 // Add Artwork
-function addToGallery(art: Artwork) {
-    setGallery((prev) =>
-    prev.find((a) => a.id === art.id)
-        ? prev
-        : [...prev, { ...art }]
+const addToGallery = (artwork: Artwork) => {
+setGallery(prev => {
+    const exists = prev.find(a => a.id === artwork.id)
+    if (exists) {
+    // Update bestehendes Artwork inklusive Note
+    return prev.map(a =>
+        a.id === artwork.id ? { ...a, note: artwork.note ?? a.note } : a
     )
+    } else {
+    return [...prev, artwork]
+    }
+})
 }
 
 // Remove Artwork

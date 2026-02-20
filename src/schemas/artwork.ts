@@ -10,8 +10,8 @@ artist_title: z
     .string()
     .nullable()
     .transform((val) => val ?? "Unknown Artist"),
-
 image_id: z.string().nullable(),
+note: z.string().max(200).optional(),
 })
 
 export type Artwork = z.infer<typeof ArtworkSchema>
